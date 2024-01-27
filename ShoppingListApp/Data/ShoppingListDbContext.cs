@@ -7,12 +7,8 @@ namespace ShoppingListApp.Data
     {
         public ShoppingListDbContext(DbContextOptions options) 
             : base(options)
-        {
-        }
-
+        {}
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductNote> ProductNotes { get; set; }
-
-
     }
 }

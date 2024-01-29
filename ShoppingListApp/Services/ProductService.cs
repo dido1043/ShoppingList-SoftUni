@@ -60,9 +60,15 @@ namespace ShoppingListApp.Services
             return new ProductViewModel() { Id = entity.Id, Name = entity.Name };
         }
 
-        public Task UpdateProductAsync(ProductViewModel model)
+        public async Task UpdateProductAsync(ProductViewModel model)
         {
-            throw new NotImplementedException();
+            var entity = await _context.Products.FindAsync(model.Id);
+            if (model == null)
+            {
+                throw new ArgumentException("Invalid product");
+            }
+            entity.Name = model.Name;
+            _context.SaveChanges();    
         }
     }
 }

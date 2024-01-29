@@ -17,9 +17,15 @@ namespace ShoppingListApp.Services
             throw new NotImplementedException();
         }
 
-        public Task DeleteProductAsync(int id)
+        public async Task DeleteProductAsync(int id)
         {
-            throw new NotImplementedException();
+            var productForDelete = await _context.Products.FindAsync(id);
+            if (productForDelete == null)
+            {
+                throw new ArgumentException("Invalid product");
+            }
+            _context.Products.Remove(productForDelete);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetAllAsync()

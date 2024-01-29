@@ -14,7 +14,8 @@ namespace ShoppingListApp.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
-                .HasData(new Product() { Id = 1, Name = "Cheese" });
+                .HasData(new Product() { Id = 1, Name = "Cheese" },
+                new Product() { Id = 2, Name = "RedBull"});
             base.OnModelCreating(modelBuilder);
         }
     }

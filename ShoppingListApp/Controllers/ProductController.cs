@@ -16,5 +16,17 @@ namespace ShoppingListApp.Controllers
             var model = await productService.GetAllAsync();   
             return View(model);
         }
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await productService.DeleteProductAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }

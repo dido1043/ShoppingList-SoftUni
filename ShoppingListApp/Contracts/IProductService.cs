@@ -1,6 +1,6 @@
 ﻿using ShoppingListApp.Models;
 
-namespace ShoppingListApp.Contarcts
+namespace ShoppingListApp.Contracts
 {
     public interface IProductService
     {

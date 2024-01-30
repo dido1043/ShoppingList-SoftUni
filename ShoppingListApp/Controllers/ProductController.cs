@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShoppingListApp.Contarcts;
+using ShoppingListApp.Contracts;
 using ShoppingListApp.Models;
 
 namespace ShoppingListApp.Controllers

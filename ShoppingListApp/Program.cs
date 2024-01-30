@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ShoppingListApp.Contarcts;
+using ShoppingListApp.Contracts;
 using ShoppingListApp.Data;
 using ShoppingListApp.Services;
 
